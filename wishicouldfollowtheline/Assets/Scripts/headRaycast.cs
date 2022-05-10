@@ -7,6 +7,7 @@ public class headRaycast : MonoBehaviour
     // Start is called before the first frame update
     private bool alreadySent;
     private GameObject lastHit;
+    private float raySize = 3.0f;
 
     void Start()
     {
@@ -17,10 +18,10 @@ public class headRaycast : MonoBehaviour
         RaycastHit interact;
         if(Input.GetMouseButtonDown(0)){
             // Debug.Log("teste");
-            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out interact, 1.5f)){
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out interact, raySize)){
                 // Debug.Log(interact.transform.gameObject.tag);
                 if(interact.transform.gameObject.tag == "interactable"){
-                    Destroy(GameObject.FindWithTag(interact.transform.gameObject.tag+"trap"));
+                    interact.transform.SendMessage ("Clicked");
                 }
             }
         }
@@ -32,7 +33,7 @@ public class headRaycast : MonoBehaviour
         // RaycastHit lastHit;
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1.5f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, raySize))
         {
             // Debug.Log(lastHit.tag);
 

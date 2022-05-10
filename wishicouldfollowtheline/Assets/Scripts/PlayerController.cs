@@ -36,6 +36,13 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        if(Input.GetKeyDown(KeyCode.LeftShift)){
+            _baseSpeed = _baseSpeed*1.5f;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift)){
+            _baseSpeed = 6.0f;
+        }
+
         float y = 0;
         if(!characterController.isGrounded){
             y = -_gravidade;
