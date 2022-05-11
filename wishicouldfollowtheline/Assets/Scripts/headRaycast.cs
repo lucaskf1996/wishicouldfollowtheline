@@ -7,7 +7,7 @@ public class headRaycast : MonoBehaviour
     // Start is called before the first frame update
     private bool alreadySent;
     private GameObject lastHit;
-    private float raySize = 3.0f;
+    private float raySize = 2.5f;
 
     void Start()
     {
