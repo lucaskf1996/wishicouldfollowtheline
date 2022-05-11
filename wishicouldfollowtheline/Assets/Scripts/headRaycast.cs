@@ -25,11 +25,7 @@ public class headRaycast : MonoBehaviour
                 }
             }
         }
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
         // RaycastHit lastHit;
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
