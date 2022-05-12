@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     bool locked = false;
     float mouse_dX;
     float mouse_dY;
+    float _ySpeed;
 
    CharacterController characterController;
    GameManager gm;
@@ -62,8 +63,19 @@ public class PlayerController : MonoBehaviour
 
             direction = transform.right * x * _baseSpeed + transform.up * 1 + transform.forward * z * _baseSpeed;
 
-            y += _gravidade * Time.deltaTime;
-            direction.y = y;
+            print(characterController.isGrounded + "  " + _ySpeed);
+            if(characterController.isGrounded){
+                _ySpeed = 0f;
+                // if(Input.GetKeyDown(KeyCode.Space)){
+                //     _ySpeed = 5f;
+                // }
+            }
+            else{
+                _ySpeed += _gravidade * Time.deltaTime;
+            }
+
+
+            direction.y = _ySpeed;
             characterController.Move(direction * Time.deltaTime);
 
             //Tratando movimentação do mouse
