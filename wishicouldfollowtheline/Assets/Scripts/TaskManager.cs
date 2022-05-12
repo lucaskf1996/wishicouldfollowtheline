@@ -8,17 +8,16 @@ public class TaskManager : MonoBehaviour
     public Text taskText;
     
     GameManager gm;
-    AudioSource aS;
+    public AudioSource aS;
 
-    void Start()
+    void Awake()
     {
         gm = GameManager.GetInstance();
-        aS = GetComponent<AudioSource>();
     }
 
     public IEnumerator StartTask(string task){
         yield return new WaitUntil(() => gm.inDialogue == false);
-        Debug.Log("Starting task");
+        Debug.Log ("Starting task");
         taskText.gameObject.SetActive(true);
         taskText.text = task;
         Debug.Log(task);
