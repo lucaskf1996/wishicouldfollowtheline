@@ -7,7 +7,9 @@ public class GameManager
     public bool inHand = false;
     public bool carrotsPlaced = false;
     public bool allowMovement = false;
+    public bool waterCollected = false;
     public bool waterPlaced = false;
+    public bool inDialogue = false;
 
     private static GameManager _instance;
 

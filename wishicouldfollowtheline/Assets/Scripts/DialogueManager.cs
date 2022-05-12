@@ -20,11 +20,13 @@ public class DialogueManager : MonoBehaviour
         DialogueTrigger startDialogue = GetComponent<DialogueTrigger>();
         TaskTrigger startTask = GetComponent<TaskTrigger>();
         startDialogue.TriggerDialogue();
+        startTask.TriggerTask();
     }
 
     public void StartDialogue(Dialogue dialogue){
         Debug.Log("Starting conversation");
         gm.allowMovement = false;
+        gm.inDialogue = true;
         nameText.gameObject.SetActive(true);
         dialogueText.gameObject.SetActive(true);
         sentences.Clear();
@@ -57,5 +59,6 @@ public class DialogueManager : MonoBehaviour
         dialogueText.gameObject.SetActive(false);
         gm.allowMovement = true;
         Cursor.lockState = CursorLockMode.Locked;
+        gm.inDialogue = false;
     }
 }

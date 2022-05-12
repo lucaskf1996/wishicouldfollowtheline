@@ -14,7 +14,8 @@ public class TaskManager : MonoBehaviour
         gm = GameManager.GetInstance();
     }
 
-    public void StartTask(string task){
+    public IEnumerator StartTask(string task){
+        yield return new WaitUntil(() => gm.inDialogue == false);
         Debug.Log("Starting task");
         taskText.gameObject.SetActive(true);
 
@@ -22,7 +23,7 @@ public class TaskManager : MonoBehaviour
         Debug.Log(task);
     }
 
-    void EndTask(){
+    public void EndTask(){
         taskText.text = " ";
         taskText.gameObject.SetActive(false);
     }

@@ -11,10 +11,16 @@ public class Bucket : MonoBehaviour
     private int carrotCounter = 0;
 
     GameManager gm;
+    TaskManager dm;
+    DialogueTrigger startDialogue;
+    TaskTrigger startTask;
 
     void Start()
     {
         gm = GameManager.GetInstance();
+        dm = FindObjectOfType<TaskManager>();
+        startDialogue = GetComponent<DialogueTrigger>();
+        startTask = GetComponent<TaskTrigger>();
     }
 
     void Clicked() {
@@ -27,6 +33,9 @@ public class Bucket : MonoBehaviour
                 gm.carrotsPlaced = true;
                 gameObject.tag = "Untagged";
                 gameObject.GetComponent<Renderer>().material = material2;
+                dm.EndTask();
+                startDialogue.TriggerDialogue();
+                startTask.TriggerTask();
             }
             gm.inHand = false;
         }

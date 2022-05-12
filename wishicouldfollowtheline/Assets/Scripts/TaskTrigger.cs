@@ -7,6 +7,6 @@ public class TaskTrigger : MonoBehaviour
     public string task;
 
     public void TriggerTask(){
-        FindObjectOfType<TaskManager>().StartTask(task);
+        StartCoroutine(FindObjectOfType<TaskManager>().StartTask(task));
     }
 }
