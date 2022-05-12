@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AxePickUp : MonoBehaviour
+public class PickUpBucket : MonoBehaviour
 {
     public GameObject handItem;
     GameManager gm;
@@ -14,7 +14,7 @@ public class AxePickUp : MonoBehaviour
 
 
     void Clicked () {
-        if(gm.waterPlaced){
+        if(gm.carrotsPlaced){
             if (!gm.inHand && !handItem.activeSelf){
                 handItem.SetActive(true);
                 gameObject.tag = "Untagged";

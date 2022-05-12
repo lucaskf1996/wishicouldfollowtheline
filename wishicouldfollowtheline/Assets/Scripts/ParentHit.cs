@@ -27,7 +27,7 @@ public class ParentHit : MonoBehaviour {
         }
     }
 
-    void Clicked(){
-        print("teste");
-    }
+    // void Clicked(){
+    //     print("teste");
+    // }
 }

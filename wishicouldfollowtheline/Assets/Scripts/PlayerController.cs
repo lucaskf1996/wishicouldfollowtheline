@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
        if(gm.allowMovement){
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-            float y = 0f;
+            // float y = 0f;
 
             if(Input.GetKeyDown(KeyCode.LeftShift)){
                 _baseSpeed = _baseSpeed*2f;
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
             direction = transform.right * x * _baseSpeed + transform.up * 1 + transform.forward * z * _baseSpeed;
 
-            print(characterController.isGrounded + "  " + _ySpeed);
+            // print(characterController.isGrounded + "  " + _ySpeed);
             if(characterController.isGrounded){
                 _ySpeed = 0f;
                 // if(Input.GetKeyDown(KeyCode.Space)){
