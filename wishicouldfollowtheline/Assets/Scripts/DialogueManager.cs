@@ -18,12 +18,15 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         names = new Queue<string>();
         DialogueTrigger startDialogue = GetComponent<DialogueTrigger>();
-        StartDialogue(startDialogue.dialogue);
+        TaskTrigger startTask = GetComponent<TaskTrigger>();
+        startDialogue.TriggerDialogue();
     }
 
     public void StartDialogue(Dialogue dialogue){
         Debug.Log("Starting conversation");
         gm.allowMovement = false;
+        nameText.gameObject.SetActive(true);
+        dialogueText.gameObject.SetActive(true);
         sentences.Clear();
         names.Clear();
 
