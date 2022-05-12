@@ -10,16 +10,24 @@ public class ParentHit : MonoBehaviour {
     }
 
     void HitByRay () {
-        Debug.Log ("I was hit by a Ray");
+        // Debug.Log ("I was hit by a Ray");
         foreach (Transform child in transform){
-            child.SendMessage ("HitByRay");
+            if(child.tag == "outlineChild"){
+                child.SendMessage ("HitByRay");
+            }
         }
     }
 
     void NotHitByRay () {
-        Debug.Log ("I was not hit by a Ray");
+        // Debug.Log ("I was not hit by a Ray");
         foreach (Transform child in transform){
-            child.SendMessage ("NotHitByRay");
+            if(child.tag == "outlineChild"){
+                child.SendMessage ("NotHitByRay");
+            }
         }
+    }
+
+    void Clicked(){
+        print("teste");
     }
 }

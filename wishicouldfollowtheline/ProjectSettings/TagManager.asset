@@ -6,6 +6,15 @@ TagManager:
   tags:
   - interactabletrap
   - interactable
+  - stealingpoint
+  - sittingpoint
+  - Sheep
+  - Cow
+  - pickuppoint
+  - Chicken
+  - waypoint
+  - Pig
+  - outlineChild
   layers:
   - Default
   - TransparentFX

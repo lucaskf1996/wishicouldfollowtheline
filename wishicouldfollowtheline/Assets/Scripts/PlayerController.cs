@@ -60,21 +60,6 @@ public class PlayerController : MonoBehaviour
                 _baseSpeed = 6.0f;
             }
 
-            // if(!characterController.isGrounded){
-            //     y = -_gravidade * Time.deltaTime;
-            // }
-
-            if (characterController.isGrounded && y < 0)
-            {
-                y = 0f;
-            }
-
-            // Changes the height position of the player..
-            if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                y += 50f;
-            }
-
             direction = transform.right * x * _baseSpeed + transform.up * 1 + transform.forward * z * _baseSpeed;
 
             y += _gravidade * Time.deltaTime;
