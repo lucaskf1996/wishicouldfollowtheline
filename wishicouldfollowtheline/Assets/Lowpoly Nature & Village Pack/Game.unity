@@ -3525,6 +3525,7 @@ GameObject:
   - component: {fileID: 155089287}
   - component: {fileID: 155089286}
   - component: {fileID: 155089288}
+  - component: {fileID: 155089289}
   m_Layer: 0
   m_Name: TreePile
   m_TagString: interactable
@@ -3575,6 +3576,19 @@ CapsuleCollider:
   m_Height: 6
   m_Direction: 0
   m_Center: {x: -9.2, y: 15.7, z: 15.1}
+--- !u!114 &155089289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155089285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c501121690b184aa1d97110d36ed86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axe: {fileID: 1237766993}
 --- !u!1001 &156659468
 PrefabInstance:
   m_ObjectHideFlags: 0
