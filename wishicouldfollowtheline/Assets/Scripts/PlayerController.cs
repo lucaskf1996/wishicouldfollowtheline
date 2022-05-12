@@ -8,22 +8,25 @@ public class PlayerController : MonoBehaviour
 
     CursorLockMode lockMode;
     public Vector3 direction;
-
-    void Awake () {
-    lockMode = CursorLockMode.Locked;
-    Cursor.lockState = lockMode;
-    direction = Vector3.zero;
-    }
-
-   //Referência usada para a câmera filha do jogador
-   GameObject playerCamera;
-   //Utilizada para poder travar a rotação no angulo que quisermos.
-   float cameraRotation;
-   float _baseSpeed = 6.0f;
-   float _gravidade = -9.8f;
+    public GameObject pauseUI;
+    //Referência usada para a câmera filha do jogador
+    GameObject playerCamera;
+    //Utilizada para poder travar a rotação no angulo que quisermos.
+    float cameraRotation;
+    float _baseSpeed = 6.0f;
+    float _gravidade = -9.8f;
+    bool locked = false;
+    float mouse_dX;
+    float mouse_dY;
 
    CharacterController characterController;
    GameManager gm;
+   
+    void Awake () {
+        lockMode = CursorLockMode.Locked;
+        Cursor.lockState = lockMode;
+        direction = Vector3.zero;
+    }
    
    void Start()
    {
@@ -31,6 +34,16 @@ public class PlayerController : MonoBehaviour
         cameraRotation = 0.0f;
         characterController = GetComponent<CharacterController>();
         gm = GameManager.GetInstance();
+    }
+
+    void lockMouse(){
+        locked = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    void unlockMouse(){
+        locked = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
    void Update()
@@ -69,8 +82,15 @@ public class PlayerController : MonoBehaviour
             characterController.Move(direction * Time.deltaTime);
 
             //Tratando movimentação do mouse
-            float mouse_dX = Input.GetAxis("Mouse X");
-            float mouse_dY = -Input.GetAxis("Mouse Y");
+            if(locked){
+                mouse_dX = 0;
+                mouse_dY = 0;
+            }
+            else{
+                mouse_dX = Input.GetAxis("Mouse X");
+                mouse_dY = -Input.GetAxis("Mouse Y");
+            }
+            
                 
             //Tratando a rotação da câmera
             cameraRotation += mouse_dY;

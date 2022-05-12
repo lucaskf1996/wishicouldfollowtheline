@@ -17,7 +17,10 @@ public class PickUp : MonoBehaviour
         if (!gm.inHand && !handItem.activeSelf){
             handItem.SetActive(true);
             gameObject.tag = "Untagged";
-            gameObject.SetActive(false);
+            if(transform.childCount > 0){
+                gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
+            }
+            gameObject.GetComponent<Renderer>().enabled = false;
             gm.inHand = true;
         }
     }
