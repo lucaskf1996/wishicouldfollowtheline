@@ -10,6 +10,7 @@ public class Bucket : MonoBehaviour
     public GameObject[] carrots;
     private int carrotCounter = 0;
 
+    public AudioSource aS;
     GameManager gm;
     TaskManager dm;
     DialogueTrigger startDialogue;
@@ -27,6 +28,7 @@ public class Bucket : MonoBehaviour
         if(carrotCounter<carrots.Length && carrotHand.activeSelf) {
             carrotHand.SetActive(false);
             carrots[carrotCounter].SetActive(true);
+            aS.Play(0);
             carrotCounter += 1;
             if(carrotCounter == carrots.Length){
                 promptCanvas.SetActive(false);

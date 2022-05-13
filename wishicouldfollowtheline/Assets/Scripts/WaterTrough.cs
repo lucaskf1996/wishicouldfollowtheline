@@ -15,6 +15,7 @@ public class WaterTrough : MonoBehaviour
     TaskManager dm;
     DialogueTrigger startDialogue;
     TaskTrigger startTask;
+    public AudioSource aS;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class WaterTrough : MonoBehaviour
             promptCanvas.SetActive(false);
             gm.waterPlaced = true;
             gameObject.tag = "Untagged";
+            aS.Play(0);
             // gameObject.GetComponent<Renderer>().material = material2;
             dm.EndTask();
             startDialogue.TriggerDialogue();

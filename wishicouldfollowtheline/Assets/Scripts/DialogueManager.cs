@@ -52,6 +52,8 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         string name = names.Dequeue();
 
+        Debug.Log(audios.Length);
+        Debug.Log(audio);
         audioS.clip = audios[audio];
         audioS.Play();
         audio += 1;
