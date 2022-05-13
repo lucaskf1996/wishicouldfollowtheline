@@ -10,7 +10,8 @@ public class LogsClicked : MonoBehaviour
     public AudioClip[] audios;
     private AudioSource source;
     TaskManager tm;
-    DialogueTrigger startDialogue;
+    public DialogueTrigger midDialogue;
+    public DialogueTrigger startDialogue;
     TaskTrigger startTask;
     public GameObject horse;
     public GameObject deadHorse;
@@ -20,7 +21,7 @@ public class LogsClicked : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.clip = audios[0];
         tm = FindObjectOfType<TaskManager>();
-        startDialogue = GetComponent<DialogueTrigger>();
+        // startDialogue = GetComponent<DialogueTrigger>();
         startTask = GetComponent<TaskTrigger>();
     }
 
@@ -28,6 +29,7 @@ public class LogsClicked : MonoBehaviour
         if(axe.activeSelf && gm.waterPlaced){
             if(count < 2){
                 source.Play();
+                midDialogue.TriggerDialogue();
                 count++;
             }
             if(count == 2){

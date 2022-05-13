@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
     public GameObject handItem;
     GameManager gm;
+    public AudioSource aS;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class PickUp : MonoBehaviour
         if (!gm.inHand && !handItem.activeSelf){
             handItem.SetActive(true);
             gameObject.tag = "Untagged";
+            aS.Play(0);
             if(transform.childCount > 0){
                 gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
             }

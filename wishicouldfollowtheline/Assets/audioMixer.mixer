@@ -32,10 +32,12 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 99a2aa98d6e1d1c45b9ecf46df1e649a
     name: AmbientVol
+  - guid: bb83e48d0509b42498c56e3a853c5855
+    name: DialVol
   - guid: a9de1644be62076488da65b146667e23
     name: MasterVol
   - guid: de8f45e5b19f5a94b8f0eefef31615e5
-    name: SFX
+    name: SfxVol
   m_AudioMixerGroupViews:
   - guids:
     - e4e113e8e4841c948846855715aeeaaa

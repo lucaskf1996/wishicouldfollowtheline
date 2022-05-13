@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseUI;
     public GameObject menu;
     public AudioMixer mixer;
-    public Slider sMaster, sAmbient, sSFX;
+    public Slider sMaster, sAmbient, sSFX, sDial;
     public GameObject Player;
     public GameObject Dialogue;
     public GameObject Continue, MainMenu, Quit;
@@ -57,6 +57,10 @@ public class PauseMenu : MonoBehaviour
 
     public void SetSfxVolume(){
         mixer.SetFloat("SfxVol", sSFX.value);
+    }
+
+    public void SetDialVolume(){
+        mixer.SetFloat("DialVol", sDial.value);
     }
 
     public void MainMenuButton(){
