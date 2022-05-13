@@ -11620,7 +11620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13224098afa7c65438785a563fa1fed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1772369280}
 --- !u!136 &463786914
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18859,8 +18858,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 175852, guid: f8243bb353e5cb74481bb26fe62fd298, type: 3}
   m_PrefabInstance: {fileID: 1491858122}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &771410725
-MeshCollider:
+--- !u!114 &771410723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771410722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc26e33a3b06e04fa158d565817647d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &771410724
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18869,10 +18880,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 1
+  m_Height: 3.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!82 &771410726
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19906,7 +19917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ad2b7f0cad430468ef120265f98e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porta: {fileID: 432986305}
+  casa:
+  - {fileID: 432986311}
+  - {fileID: 432986305}
+  - {fileID: 432986307}
+  - {fileID: 432986317}
+  - {fileID: 432986313}
   wolf: {fileID: 771410722}
 --- !u!136 &813010985
 CapsuleCollider:
@@ -43261,7 +43277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759987547891337586, guid: c94a328e775751b428631cef54da3630, type: 3}
       propertyPath: m_StepOffset
-      value: 0.5
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7759987549177876836, guid: c94a328e775751b428631cef54da3630, type: 3}
       propertyPath: m_LocalPosition.y

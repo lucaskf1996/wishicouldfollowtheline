@@ -7,7 +7,7 @@ public class horseClicked : MonoBehaviour
     TaskManager tm;
     DialogueTrigger startDialogue;
     TaskTrigger startTask;
-    public GameObject porta;
+    public GameObject[] casa;
 
     void Start(){
         tm = FindObjectOfType<TaskManager>();
@@ -22,7 +22,9 @@ public class horseClicked : MonoBehaviour
         startDialogue.TriggerDialogue();
         startTask.TriggerTask();
         gameObject.tag = "Untagged";
-        porta.GetComponent<Renderer>().enabled = false;
+        foreach(GameObject pedaco in casa){
+            pedaco.GetComponent<Renderer>().enabled = false;
+        }
     }
 
     void HitByRay () {
