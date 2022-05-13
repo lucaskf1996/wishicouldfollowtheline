@@ -37,6 +37,7 @@ public class LogsClicked : MonoBehaviour
                 tm.EndTask();
                 startDialogue.TriggerDialogue();
                 startTask.TriggerTask();
+                gameObject.tag = "Untagged";
             }
         }
     }
