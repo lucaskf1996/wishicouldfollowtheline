@@ -3709,6 +3709,7 @@ MonoBehaviour:
   startDialogue: {fileID: 155089293}
   horse: {fileID: 684382506}
   deadHorse: {fileID: 813010978}
+  son: {fileID: 463786912}
 --- !u!82 &155089290
 AudioSource:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class LogsClicked : MonoBehaviour
     TaskTrigger startTask;
     public GameObject horse;
     public GameObject deadHorse;
+    public GameObject son;
 
     void Start(){
         gm = GameManager.GetInstance();
@@ -35,6 +36,7 @@ public class LogsClicked : MonoBehaviour
             if(count == 2){
                 horse.SetActive(false);
                 deadHorse.SetActive(true);
+                son.SetActive(false);
                 deadHorse.GetComponent<AudioSource>().Play();
                 tm.EndTask();
                 startDialogue.TriggerDialogue();
