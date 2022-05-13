@@ -12,15 +12,15 @@ AnimatorController:
   - m_Name: legs
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 4
+    m_DefaultInt: 5
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: arms
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 9
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: legs
@@ -4022,13 +4022,13 @@ AnimatorStateMachine:
     m_Position: {x: 288, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102217692269888000}
-    m_Position: {x: 620, y: -200, z: 0}
+    m_Position: {x: 570, y: -210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102536700601998196}
     m_Position: {x: 672, y: -144, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102856890565333348}
-    m_Position: {x: 756, y: 168, z: 0}
+    m_Position: {x: 750, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102465508067827802}
     m_Position: {x: 708, y: -84, z: 0}
@@ -4037,7 +4037,7 @@ AnimatorStateMachine:
     m_Position: {x: 720, y: -12, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102068660076989738}
-    m_Position: {x: 756, y: 228, z: 0}
+    m_Position: {x: 750, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102852719629602132}
     m_Position: {x: 624, y: 336, z: 0}
