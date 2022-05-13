@@ -7,8 +7,11 @@ public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
     private Queue<string> names;
+    public AudioClip[] audios;
+    public AudioSource audioS;
     public Text nameText;
     public Text dialogueText;
+    private int audio = 0;
     
     GameManager gm;
 
@@ -49,6 +52,9 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         string name = names.Dequeue();
 
+        audioS.clip = audios[audio];
+        audioS.Play();
+        audio += 1;
         nameText.text = name;
         dialogueText.text = sentence;
         Debug.Log(sentence);
