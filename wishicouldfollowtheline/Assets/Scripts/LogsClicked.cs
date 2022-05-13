@@ -9,17 +9,19 @@ public class LogsClicked : MonoBehaviour
     private int count = 0;
     public AudioClip[] audios;
     private AudioSource source;
-    // TaskManager tm;
-    // DialogueTrigger startDialogue;
-    // TaskTrigger startTask;
+    TaskManager tm;
+    DialogueTrigger startDialogue;
+    TaskTrigger startTask;
+    public GameObject horse;
+    public GameObject deadHorse;
 
     void Start(){
         gm = GameManager.GetInstance();
         source = GetComponent<AudioSource>();
         source.clip = audios[0];
-        // tm = FindObjectOfType<TaskManager>();
-        // startDialogue = GetComponent<DialogueTrigger>();
-        // startTask = GetComponent<TaskTrigger>();
+        tm = FindObjectOfType<TaskManager>();
+        startDialogue = GetComponent<DialogueTrigger>();
+        startTask = GetComponent<TaskTrigger>();
     }
 
     void Clicked(){
@@ -29,11 +31,13 @@ public class LogsClicked : MonoBehaviour
                 count++;
             }
             if(count == 2){
-                source.clip = audios[1];
-                source.Play();
-                // tm.EndTask();
-                // startDialogue.TriggerDialogue();
-                // startTask.TriggerTask();
+                horse.SetActive(false);
+                deadHorse.SetActive(true);
+                deadHorse.GetComponent<AudioSource>().Play();
+                tm.EndTask();
+                startDialogue.TriggerDialogue();
+                startTask.TriggerTask();
+                gameObject.tag = "Untagged";
             }
         }
     }
