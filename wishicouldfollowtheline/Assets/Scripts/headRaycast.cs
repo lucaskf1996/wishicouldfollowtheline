@@ -7,14 +7,14 @@ public class headRaycast : MonoBehaviour
     // Start is called before the first frame update
     private bool alreadySent;
     private GameObject lastHit;
-    private float raySize = 2.5f;
+    private float raySize = 3f;
 
     void Start()
     {
         alreadySent = false;
     }
 
-    void Update(){
+    void FixedUpdate(){
         RaycastHit interact;
         if(Input.GetMouseButtonDown(0)){
             // Debug.Log("teste");

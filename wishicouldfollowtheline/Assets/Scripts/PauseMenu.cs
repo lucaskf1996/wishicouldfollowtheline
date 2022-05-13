@@ -18,6 +18,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject Dialogue;
     public GameObject Continue, MainMenu, Quit;
 
+    GameManager gm;
+
+    void Start(){
+        gm = GameManager.GetInstance();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -65,6 +71,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuButton(){
         Resume();
+        gm.Reset();
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 

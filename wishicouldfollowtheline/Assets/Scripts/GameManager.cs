@@ -22,4 +22,13 @@ public class GameManager
 
         return _instance;
     }
+
+    public void Reset(){
+        inHand = false;
+        carrotsPlaced = false;
+        allowMovement = false;
+        waterCollected = false;
+        waterPlaced = false;
+        inDialogue = false;
+    }
 }
